@@ -1,0 +1,146 @@
+body {
+  background-color: #f5f5f5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: unset;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  padding: 20px 0;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.todo {
+  border-bottom: 1px solid #ededed;
+  position: relative;
+}
+
+.todo .label {
+  font-size: 24px;
+  font-weight: 300;
+  word-break: break-all;
+  padding: 16px 16px 16px 60px;
+  line-height: 1.4em;
+  transition: color 0.4s;
+
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.todo .label.done {
+  color: #d9d9d9;
+  text-decoration: line-through;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E");
+}
+
+.todo .toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  border: none; /* Mobile Safari */
+}
+
+.todo .toggle:focus {
+  outline: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 16px 16px 60px;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4em;
+  border: none;
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+
+.input::placeholder,
+.input::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+.input:focus {
+  outline: 0;
+}
+
+.header {
+  position: relative;
+}
+
+.header .toggleAll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
+.header .toggleAll::before {
+  content: "❯";
+  font-size: 22px;
+}
+
+.header .toggleAll.dim {
+  color: #e6e6e6;
+}
+
+.header .toggleAll.lit {
+  color: #737373;
+}
+
+.todo .deleteButton {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 0;
+  padding: 10px;
+  font-size: 30px;
+  color: #cc9a9a;
+  transition: color 0.2s ease-out;
+  background: transparent;
+}
+
+.todo .deleteButton:focus {
+  outline: 0;
+}
+
+.todo:hover .deleteButton {
+  display: inline-block;
+}
+
+.footer {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .clear-completed {
+  width: 120px;
+  text-align: right;
+}
+
+.container {
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
